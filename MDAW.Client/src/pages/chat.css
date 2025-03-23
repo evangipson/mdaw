@@ -1,0 +1,47 @@
+.mdaw__chat {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 16px;
+    max-width: 800px;
+    flex: 1;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.mdaw__messages {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 8px;
+    flex: 1;
+    max-height: 100%;
+    min-width: 100%;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.mdaw__message {
+    display: flex;
+    flex-flow: column nowrap;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 18px;
+    width: 100%;
+    padding: 16px;
+    gap: 4px;
+    width: 100%;
+    border-radius: 16px;
+    box-sizing: border-box;
+    background: #ccc;
+    color: #131313;
+}
+
+.mdaw__message-user {
+    font-size: 12px;
+}
+
+.mdaw__message-text {
+    font-size: 16px;
+}

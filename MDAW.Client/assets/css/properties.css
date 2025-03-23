@@ -1,0 +1,22 @@
+:root {
+	--font-color: #131313;
+	--bg-color: #ededed;
+	--color-white: #fff;
+	--color-black: #000;
+	--color-valid: #26b050;
+	--color-invalid: #e50000;
+	--color-info: #0057b7;
+	--color-warning: #ef5c30;
+	--bg-color-variant: color-mix(in srgb, var(--bg-color), var(--font-color) 15%);
+	--bg-color-light: color-mix(in srgb, var(--bg-color), #fff 15%);
+	--font-color-variant: color-mix(in srgb, var(--font-color), var(--bg-color) 15%);
+	--primary-color: #034670;
+	--site-width: 1200px;
+}
+
+:root:has(.dark-mode) {
+	--font-color: #dddddd;
+	--bg-color: #131313;
+	--color-white: #000;
+	--color-black: #fff;
+}

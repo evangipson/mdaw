@@ -1,0 +1,15 @@
+{
+  "record": {
+    "hosts": [
+      "localhost",
+      "172.24.176.1",
+      "192.168.1.75",
+      "127.0.0.1"
+    ],
+    "hash": {
+      "key": "cc83e6d8f04e76ca863ba0b055d25a17bb10d210e719f3d79ce8cab88e416c40",
+      "cert": "52333b8113f8519f5e1f944e33fab2153b7cc372c3696691be135ec0e55b5730"
+    }
+  },
+  "configFilePath": "C:\\projects\\MDAW\\MDAW.Client\\certs\\config.json"
+}
