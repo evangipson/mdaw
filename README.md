@@ -1,6 +1,8 @@
 # MDAW
 A multi-user digital audio workstation using .NET SignalR web sockets for the server, and React for the client.
 
+![A recording of MDAW, showing two browser windows communicating with eachother](./assets/mdaw-example.gif)
+
 # Getting Started
 1. Clone the repo
 1. Launch a terminal
