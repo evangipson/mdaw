@@ -4,11 +4,11 @@ A multi-user digital audio workstation using .NET SignalR web sockets for the se
 # Getting Started
 1. Clone the repo
 1. Launch a terminal
-1. Navigate to the [`./MDAW.Server/`](./MDAW.Server/) folder
+1. Navigate to the [`./src/Application/MDAW.Server/`](./src/Application/MDAW.Server/) folder
 1. Run `dotnet restore` to restore NuGet packages for the server
 1. Run `dotnet run` to launch the server
 1. Launch another terminal
-1. Navigate to the [`./MDAW.Client/`](./MDAW.Client/) folder
+1. Navigate to the [`./src/Web/MDAW.Client/`](./src/Web/MDAW.Client/) folder
 1. Run `npm install` to restore node packages for the client
 1. Run `npm run dev` to launch the client
 

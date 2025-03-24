@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35913.81 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDAW.Server", "MDAW.Server\MDAW.Server.csproj", "{440C9DF2-553E-4AC9-A023-D711675AF99A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDAW.Server", "src\Application\MDAW.Server\MDAW.Server.csproj", "{440C9DF2-553E-4AC9-A023-D711675AF99A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDAW.Core", "MDAW.Core\MDAW.Core.csproj", "{C18E3B83-13F0-4DC5-B896-F9D609163EAD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDAW.Core", "src\Application\MDAW.Core\MDAW.Core.csproj", "{C18E3B83-13F0-4DC5-B896-F9D609163EAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
