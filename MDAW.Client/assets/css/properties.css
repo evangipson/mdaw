@@ -7,11 +7,15 @@
 	--color-invalid: #e50000;
 	--color-info: #0057b7;
 	--color-warning: #ef5c30;
-	--bg-color-variant: color-mix(in srgb, var(--bg-color), var(--font-color) 15%);
-	--bg-color-light: color-mix(in srgb, var(--bg-color), #fff 15%);
-	--font-color-variant: color-mix(in srgb, var(--font-color), var(--bg-color) 15%);
+	--bg-color-light: color-mix(in srgb, var(--bg-color), var(--font-color) 7%);
+	--bg-color-lighter: color-mix(in srgb, var(--bg-color), var(--font-color) 15%);
+	--bg-color-lightest: color-mix(in srgb, var(--bg-color), var(--font-color) 30%);
+	--font-color-dark: color-mix(in srgb, var(--font-color), var(--bg-color) 7%);
+	--font-color-darker: color-mix(in srgb, var(--font-color), var(--bg-color) 15%);
+	--font-color-darkest: color-mix(in srgb, var(--font-color), var(--bg-color) 40%);
 	--primary-color: #034670;
 	--site-width: 1200px;
+	--font: monospace;
 }
 
 :root:has(.dark-mode) {

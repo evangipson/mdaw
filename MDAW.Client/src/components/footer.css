@@ -1,16 +1,17 @@
-.mdaw__nav {
+.mdaw__footer {
     display: flex;
     flex-flow: column nowrap;
     padding: 8px 16px;
+    box-sizing: border-box;
     background-color: var(--bg-color-light);
 }
 
-.mdaw__nav-links {
+.mdaw__footer-content {
     display: flex;
     flex-flow: row wrap;
     justify-content: end;
-    align-items: center;
-    gap: 16px;
+    font-size: 12px;
+    text-transform: uppercase;
     max-width: var(--site-width);
     width: 100%;
     margin: 0 auto;

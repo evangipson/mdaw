@@ -1,0 +1,29 @@
+.mdaw__form {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.mdaw__control {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 4px;
+}
+
+.mdaw__label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.mdaw__input {
+    font-family: var(--font);
+    color: var(--font-color);
+    background-color: var(--bg-color);
+    font-size: 16px;
+    border: 1px solid var(--bg-color-lighter);
+    outline: none;
+    padding: 8px;
+    border-radius: 8px;
+}
