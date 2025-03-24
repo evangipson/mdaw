@@ -20,8 +20,8 @@ class SignalRConnector {
             });
         });
         this.userConnected = ((onUserConnected) => {
-            this.#connection.on('userConnected', (username) => {
-                onUserConnected(username);
+            this.#connection.on('userConnected', (usernames) => {
+                onUserConnected(usernames);
             });
         });
     }
@@ -31,7 +31,15 @@ class SignalRConnector {
     };
 
     connectUser = (username) => {
-        this.#connection.invoke('connectUser', username).then(() => console.info('connected user'));
+        this.#connection.invoke('connectUser', username).then(() => console.info('connected user', username));
+    };
+
+    disconnectUser = (username) => {
+        this.#connection.invoke('disconnectUser').then(() => console.info('disconnected user', username));
+    }
+
+    getUsers = async () => {
+        return await this.#connection.invoke('getUsers');
     };
 
     static getInstance() {

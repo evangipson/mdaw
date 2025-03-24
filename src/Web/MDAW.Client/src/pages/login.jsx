@@ -8,12 +8,11 @@ const Login = ({ user, onLogin }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
+        SignalRConnector();
         if (user) {
             navigate('/chat');
             return;
         }
-
-        SignalRConnector();
     }, []);
 
     const login = () => {

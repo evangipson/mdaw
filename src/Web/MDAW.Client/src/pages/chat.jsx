@@ -18,13 +18,12 @@ const Chat = ({ user }) => {
     useEffect(() => {
         if (!initialized.current) {
             messageReceived((user, message) => setMessages(messages => [...messages, { user, message } ]));
-            userConnected((username) => setUsers(users => [...users, username ]));
+            userConnected((usernames) => setUsers(usernames));
             connectUser(user);
         }
 
         return () => initialized.current = true;
     }, []);
-
 
     if (!user) {
         return (<Navigate to="/" replace />);
