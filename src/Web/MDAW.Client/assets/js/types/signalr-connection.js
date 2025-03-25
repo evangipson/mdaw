@@ -6,6 +6,7 @@ class SignalRConnector {
     #connection;
     messageReceived;
     userConnected;
+    getTrackPlaying;
     static instance;
 
     constructor() {
@@ -24,6 +25,12 @@ class SignalRConnector {
                 onUserConnected(usernames);
             });
         });
+        this.getTrackPlaying = ((onGetTrackPlaying) => {
+            this.#connection.on('trackIsPlaying', (isPlaying) => {
+                console.info('received track playing state update!');
+                onGetTrackPlaying(isPlaying);
+            });
+        });
     }
 
     newMessage = (user, message) => {
@@ -38,8 +45,16 @@ class SignalRConnector {
         this.#connection.invoke('disconnectUser').then(() => console.info('disconnected user', username));
     }
 
-    getUsers = async () => {
-        return await this.#connection.invoke('getUsers');
+    setPlayingState = (playingState) => {
+        if (playingState) {
+            this.#connection.invoke('playTrack').then(() => console.info('track playing!'));
+            return;
+        }
+        this.#connection.invoke('stopTrack').then(() => console.info('track stopping!'));
+    };
+
+    getPlayingState = () => {
+        this.#connection.invoke('getTrackPlayState').then(() => console.info('getting track playing state'));
     };
 
     static getInstance() {

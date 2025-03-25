@@ -15,6 +15,7 @@ const NavMenu = ({ user, onLogout }) => {
             <div className='mdaw__nav-links'>
                 {user &&
                     <>
+                        <NavLink to='/daw'>DAW</NavLink>
                         <NavLink to='/chat'>Chat</NavLink>
                         <NavLink to='/login' onClick={() => logoutUser()}>Logout</NavLink>
                     </>

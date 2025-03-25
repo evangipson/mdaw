@@ -7,6 +7,8 @@ public class ChatHub(ILogger<ChatHub> logger) : Hub
 {
     private static readonly Dictionary<string, string> _connectedUsers = [];
 
+    private static bool _trackPlaying = false;
+
     private static List<string> ConnectedUsers => [.. _connectedUsers.Values];
 
     public override Task OnConnectedAsync()
@@ -38,5 +40,22 @@ public class ChatHub(ILogger<ChatHub> logger) : Hub
     public async Task SendMessage(string user, string message)
     {
         await Clients.All.SendAsync("messageReceived", user, message);
+    }
+
+    public async Task GetTrackPlayState()
+    {
+        await Clients.Caller.SendAsync("trackIsPlaying", _trackPlaying);
+    }
+
+    public async Task PlayTrack()
+    {
+        _trackPlaying = true;
+        await Clients.All.SendAsync("trackIsPlaying", true);
+    }
+
+    public async Task StopTrack()
+    {
+        _trackPlaying = false;
+        await Clients.All.SendAsync("trackIsPlaying", false);
     }
 }
