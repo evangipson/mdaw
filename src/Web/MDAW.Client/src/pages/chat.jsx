@@ -3,12 +3,11 @@ import { Navigate } from 'react-router-dom';
 import SignalRConnector from '../../assets/js/types/signalr-connection';
 import './chat.css';
 
-const Chat = ({ user }) => {
+const Chat = ({ users, user }) => {
     const initialized = useRef(false);
-    const { newMessage, connectUser, messageReceived, userConnected } = SignalRConnector();
+    const { newMessage, messageReceived } = SignalRConnector();
     const [ currentMessage, setCurrentMessage ] = useState('');
     const [ messages, setMessages ] = useState([]);
-    const [ users, setUsers ] = useState([]);
 
     const sendMessageToServer = () => {
         newMessage(user, currentMessage);
@@ -18,8 +17,6 @@ const Chat = ({ user }) => {
     useEffect(() => {
         if (!initialized.current) {
             messageReceived((user, message) => setMessages(messages => [...messages, { user, message } ]));
-            userConnected((usernames) => setUsers(usernames));
-            connectUser(user);
         }
 
         return () => initialized.current = true;
