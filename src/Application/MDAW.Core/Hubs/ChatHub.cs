@@ -58,4 +58,9 @@ public class ChatHub(ILogger<ChatHub> logger) : Hub
         _trackPlaying = false;
         await Clients.All.SendAsync("trackIsPlaying", false);
     }
+
+    public async Task SendCursorPosition(string user, float x, float y)
+    {
+        await Clients.Others.SendAsync("cursorPositionReceived", user, x, y);
+    }
 }

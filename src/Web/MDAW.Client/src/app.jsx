@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import SignalRConnector from '../assets/js/types/signalr-connection';
 import AppRoutes from './routes/app-routes';
 import NavMenu from './components/nav-menu';
@@ -24,7 +24,7 @@ const App = () => {
 		connectUser(user);
 	}, [user]);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (!initialized.current) {
             userConnected((usernames) => setUsers(usernames));
         }

@@ -7,6 +7,7 @@ class SignalRConnector {
     messageReceived;
     userConnected;
     getTrackPlaying;
+    cursorPositionReceived;
     static instance;
 
     constructor() {
@@ -16,20 +17,16 @@ class SignalRConnector {
             .build();
         this.#connection.start().catch(err => console.error('error starting SignalR connection:', err));
         this.messageReceived = ((onMessageReceived) => {
-            this.#connection.on('messageReceived', (username, message) => {
-                onMessageReceived(username, message);
-            });
+            this.#connection.on('messageReceived', (username, message) => onMessageReceived(username, message));
         });
         this.userConnected = ((onUserConnected) => {
-            this.#connection.on('userConnected', (usernames) => {
-                onUserConnected(usernames);
-            });
+            this.#connection.on('userConnected', (usernames) => onUserConnected(usernames));
         });
         this.getTrackPlaying = ((onGetTrackPlaying) => {
-            this.#connection.on('trackIsPlaying', (isPlaying) => {
-                console.info('received track playing state update!');
-                onGetTrackPlaying(isPlaying);
-            });
+            this.#connection.on('trackIsPlaying', (isPlaying) => onGetTrackPlaying(isPlaying));
+        });
+        this.cursorPositionReceived = ((onCursorPositionReceived) => {
+            this.#connection.on('cursorPositionReceived', (username, x, y) => onCursorPositionReceived(username, x, y));
         });
     }
 
@@ -55,6 +52,10 @@ class SignalRConnector {
 
     getPlayingState = () => {
         this.#connection.invoke('getTrackPlayState').then(() => console.info('getting track playing state'));
+    };
+
+    sendCursorPosition = (username, x, y) => {
+        this.#connection.invoke('sendCursorPosition', username, x, y);
     };
 
     static getInstance() {

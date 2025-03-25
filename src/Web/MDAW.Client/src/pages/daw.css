@@ -41,9 +41,11 @@
 }
 
 .mdaw__daw-interface {
+    position: relative;
     flex: 1;
     gap: 16px;
     align-items: center;
+    overflow: hidden;
 }
 
 .mdaw__daw-play-button {
@@ -113,6 +115,31 @@
 
 .mdaw__daw-play-button-label span::after {
     right: 0;
+}
+
+.mdaw__daw-cursor {
+    display: flex;
+    position: absolute;
+    background-color: var(--font-color);
+    color: var(--bg-color);
+    font-size: 14px;
+    font-weight: bold;
+    width: fit-content;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.mdaw__daw-cursor::before {
+    content: '';
+    display: flex;
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    border: 2px solid var(--font-color);
+    background-color: transparent;
 }
 
 @media (min-width: 768px) {
