@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import SignalRConnector from '../../assets/js/types/signalr-connection';
+import SignalRConnector from '../../../assets/js/types/signalr-connection';
 import './nav-menu.css';
 
 const NavMenu = ({ user, onLogout }) => {

@@ -1,8 +1,7 @@
 import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import SignalRConnector from '../assets/js/types/signalr-connection';
 import AppRoutes from './routes/app-routes';
-import NavMenu from './components/nav-menu';
-import Footer from './components/footer';
+import { Footer, NavMenu } from './components';
 import '../assets/css/properties.css';
 import '../assets/css/reset.css';
 import '../assets/css/typography.css';
