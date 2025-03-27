@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Navigate } from 'react-router-dom';
+import Keyboard from '../components/keyboard/keyboard';
 import SignalRConnector from '../../assets/js/types/signalr-connection';
 import './daw.css';
 
@@ -62,8 +63,8 @@ const Daw = ({ users, user }) => {
 						</label>
 					</div>
 				</div>
+				<Keyboard />
 				{Object.entries(userCursors)?.map((cursor, index) => {
-					console.info(cursor);
 					if (!cursor[1]) {
 						return;
 					}

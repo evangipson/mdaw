@@ -1,0 +1,126 @@
+:root {
+    --black-key-width: 0.5rem;
+    --keyboard-height: 50px;
+}
+
+.mdaw__keyboard {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: start;
+	align-items: start;
+	position: relative;
+	min-width: 100%;
+	height: var(--keyboard-height);
+}
+
+.mdaw__natural-keys {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1px, 1fr));
+    grid-template-rows: var(--keyboard-height);
+	width: 100%;
+}
+
+.mdaw__accidental-keys {
+	display: flex;
+	position: relative;
+	flex-flow: row nowrap;
+	transform: translateY(-200%);
+	min-height: calc(var(--keyboard-height) * 0.5);
+	max-height: calc(var(--keyboard-height) * 0.5);
+	min-width: calc(100% - var(--black-key-width) * 2);
+	max-width: calc(100% - var(--black-key-width) * 2);
+	margin-left: var(--black-key-width);
+	margin-right: var(--black-key-width);
+}
+
+.mdaw__accidental-keys .mdaw__keyboard-key {
+	margin: 0 auto;
+	max-width: var(--black-key-width);
+	min-height: 100%;
+	pointer-events: visiblePainted;
+}
+
+.mdaw__accidental-keys .mdaw__keyboard-key.mdaw__keyboard-key--spacer {
+	background-color: transparent;
+	border: none;
+	pointer-events: none;
+}
+
+.mdaw__keyboard-key {
+    display: flex;
+    position: relative;
+    background-color: white;
+    color: white;
+    height: 100%;
+    flex: 1;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.mdaw__keyboard-key--pressed {
+	background-color: red !important;
+}
+
+/* .mdaw__keyboard-key::before {
+    content: attr(data-key);
+    display: flex;
+    flex: 1;
+    align-items: start;
+    justify-content: center;
+    position: static;
+    font-size: 6px;
+    text-transform: uppercase;
+    color: color-mix(in srgb, black, transparent 50%);
+} */
+
+.mdaw__keyboard-key:first-of-type {
+    border-left: 1px solid black;
+}
+
+.mdaw__accidental-keys .mdaw__keyboard-key,
+.mdaw__keyboard-key--flat,
+.mdaw__keyboard-key--sharp {
+    background-color: black;
+    color: black;
+    height: 55%;
+    z-index: 1;
+}
+
+.mdaw__keyboard-key--flat::before,
+.mdaw__keyboard-key--sharp::before {
+    color: color-mix(in srgb, white, transparent 50%);
+}
+
+.mdaw__keyboard-key--flat,
+.mdaw__keyboard-key--sharp,
+.mdaw__keyboard-key--flat + .mdaw__keyboard-key,
+.mdaw__keyboard-key--sharp + .mdaw__keyboard-key {
+    margin-left: -0.25rem;
+}
+
+.mdaw__keyboard-key--chord {
+    background-color: blue;
+}
+
+.mdaw__keyboard-key--melody {
+    background-color: red;
+}
+
+@media (min-width: 410px) {
+    :root {
+        --keyboard-height: 80px;
+    }
+}
+
+@media (min-width: 768px) {
+    :root {
+		--black-key-width: 1rem;
+        --keyboard-height: 110px;
+    }
+}
+
+@media (min-width: 1200px) {
+    :root {
+        --keyboard-height: 130px;
+    }
+}
